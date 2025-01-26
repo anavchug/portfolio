@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anav Chug | Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"  rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script defer src="script.js"></script>
+    <style>
+         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #112240;
+            color: #f4f4f9;
+        }
+
+        header {
+            background-color: #112240;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            /* background-color: #0056a8; */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #0078d4;
+        }
+
+        .about div {
+            flex: 1;
+        }
+
+        .skills-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+        /* justify-content: center; */
+        margin-top: 20px;
+        font-size: 3rem;
+        color: #f4f4f9;
+    }
+
+    .skills-icons i {
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .skills-icons i:hover {
+        transform: scale(1.2);
+        color: #0078d4;
+    }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            /* background-color: white; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-cards, .certification-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .experience-card, .certification-card {
+            /* background-color: white; */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-card img, .certification-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card h3, .certification-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .experience-card p, .certification-card p {
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .work-experience, .certifications, .blogs, .resume {
+            margin-top: 40px;
+        }
+
+        .blogs a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        .blogs a:hover {
+            text-decoration: underline;
+        }
+
+        .resume a {
+            color: white;
+            background-color: #0078d4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .resume a:hover {
+            background-color: #0056a8;
+        }
+
+        .certification-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #0078d4;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .certification-links a:hover {
+            background-color: #0056a8;
+        }
+        .education {
+            margin-top: 40px;
+        }
+
+        .education-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+            background-color: #112240;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .education-details {
+            color: #f4f4f9;
+        }
+
+        .education-details h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #f4f4f9;
+        }
+
+        .education-details p {
+            margin: 5px 0;
+        }
+
+        .education-details ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .education-details ul li {
+            margin: 5px 0;
+        }
+        .blog-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .blog-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        background-color: #112240;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .blog-card h3 {
+        margin: 0 0 10px;
+        color: #f4f4f9;
+    }
+
+    .blog-card p {
+        margin: 0 0 15px;
+        color: #ccc;
+    }
+
+    .blog-card a {
+        color: white;
+        background-color: #0078d4;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+
+    .blog-card a:hover {
+        background-color: #0056a8;
+    }
+    .contact-icons {
+        display: flex;
+        /* justify-content: center; */
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-icons a {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 3rem;
+    }
+
+    .contact-icons img.icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    .contact-icons img.icon:hover {
+        transform: scale(1.2);
+    }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Anav Chug</h1>
+        <p>Software Developer | Full-Stack | Problem Solver</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="about">
+            <img src="./static/images/profilepicture.jpeg" alt="Anav Chug">
+            <div>
+                <h2>About Me</h2>
+                <p>Hello! I'm Anav Chug, a passionate full-stack software developer 🚀 with experience building web and mobile applications using C#, .NET, JavaScript, Node.js, Java, and other exciting technologies. I love collaborating with teams and creating impactful solutions.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-icons">
+                <i class="fab fa-html5" title="HTML"></i>
+                <i class="fab fa-css3-alt" title="CSS"></i>
+                <i class="fab fa-js" title="JavaScript"></i>
+                <i class="fab fa-node-js" title="Node.js"></i>
+                <i class="fab fa-react" title="React"></i>
+                <i class="fab fa-python" title="Python"></i>
+                <i class="fas fa-database" title="SQL"></i>
+                <i class="fab fa-cuttlefish" title="C#"></i>
+                <i class="fab fa-java" title="Java"></i>
+                <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                <i class="fas fa-server" title="REST APIs"></i>
+                <i class="fab fa-aws" title="AWS"></i>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <h2>Education</h2>
+            <div class="education-card">
+                <img src="./static/images/gsulogo.png" alt="Georgia Southern University Logo">
+                <div class="education-details">
+                    <h3>Georgia Southern University</h3>
+                    <p>Bachelor of Science in Computer Science, Minor in Mathematical Sciences</p>
+                    <p>August 2020 - May 2024</p>
+                    <p>GPA- 4.0 / 4.0</p>
+                    <ul>
+                        <li>Relevant coursework includes Software Engineering, Distributed Web Systems, Operating Systems, Data Structures, and Algorithms.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Game Price Comparison Application</h3>
+                    <p>A web-based platform built using Node JS enabling users to make informed purchasing decisions by comparing game prices across multiple online retailers.</p>
+                    <a href="https://github.com/anavchug/gpc-app" style="color: white">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Survey Management System</h3>
+                    <p>Developed a Flask-based survey management system with integrated OpenAI GPT-3.5 API for streamlined survey creation and AI-generated multiple-choice questions. </p>
+                    <a href="https://github.com/anavchug/SurveyAutomation-Thesis" style="color: white">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Hangman Game- Android</h3>
+                    <p>Developed an Android Hangman game in Java with a dynamic UI using custom views and RecyclerView for letter display.</p>
+                    <a href="https://github.com/anavchug/hangman_android" style="color: white">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Eliza Medical Chatbot</h3>
+                    <p>Created a Python and MySQL-based chatbot that assists users in identifying potential diseases based on symptoms, leveraging a custom database and OpenAI for intelligent responses.</p>
+                    <a href="https://github.com/anavchug/ATMApplication" style="color: white">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>ATM Application</h3>
+                    <p>Developed a Java Spring Boot-based ATM application enabling customers to manage accounts </p>
+                    <a href="https://github.com/anavchug/ATMApplication" style="color: white">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>News and Video Aggregator</h3>
+                    <p>A Java Spring Boot-powered REST API and website that aggregates and filters news articles and YouTube videos by category using NewsAPI and YouTube API for a user-friendly content experience. </p>
+                    <a href="https://github.com/anavchug/data_comm_project" style="color: white">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work-experience" class="work-experience">
+            <h2>Work Experience</h2>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <img src="./static/images/inventureITlogo.png" alt="Inventure IT">
+                    <h3>Software Engineer</h3>
+                    <p>Inventure IT</p>
+                    <p>June 2024 – Present</p><br>
+                    <p style="text-align: left;">As a Software Engineer at InventureIT, I design and maintain features for a medical practice management application. I collaborate with cross-functional teams to improve system functionality, enhance user experiences, and ensure seamless integrations. Additionally, I engage directly with clients to diagnose, debug, and resolve issues, delivering efficient solutions to meet their needs.</p>
+                    <ul style="text-align: left;">
+                        <li>Frontend- HTML, CSS, JavaScript, BootStrap</li>
+                        <li>Backend- C#, ASP.NET</li>
+                        <li>Database Tools- SSMS, SQL Server Profiler, SSRS</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <img src="./static/images/SALTlogo.jpeg" alt="SALT">
+                    <h3>Software Engineer Intern</h3>
+                    <p>SALT</p>
+                    <p>Jan 2024 – May 2024</p><br>
+                    <p style="text-align: left;">As a SALT intern, I contributed to web projects for Anagen Systems focusing on CompleteMD, an advanced medical software solution for practice management. I added features and fixed bugs in the Pathology Tracker application.</p>
+                    <ul style="text-align: left;">
+                        <li>Frontend- HTML, CSS, JavaScript, BootStrap</li>
+                        <li>Backend- C#, ASP.NET</li>
+                        <li>Database Tools- SSMS, SQL Server Profiler</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <img src="./static/images/gsulogo.png" alt="Georgia Southern University">
+                    <h3>Software Engineer Intern</h3>
+                    <p>Georgia Southern University</p>
+                    <p>May 2023 – August 2023</p><br>
+                    <p style="text-align: left;">I developed an innovative web application for warehouse picker robots, enabling them to perform tasks autonomously in a dynamic warehouse environment. By designing and implementing features like task queuing, collision-free navigation, and automated charging, I streamlined robot operations to mimic the efficiency of Amazon warehouses.</p>
+                    <ul style="text-align: left;">
+                        <li>Frontend- HTML, CSS, JavaScript, BootStrap</li>
+                        <li>Backend- Java, SpringBoot, MVC</li>
+                        <li>Testing- JUnit, Java Logging</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <img src="./static/images/internityfoundationlogo.jpeg" alt="Internity Foundation">
+                    <h3>Cloud Intern</h3>
+                    <p>Internity Foundation</p>
+                    <p>June 2021 – August 2021</p><br>
+                    <p style="text-align: left;">Gained hands-on experience with cloud computing by developing an image recognition application using AWS services. Designed user-friendly interfaces and authored technical blogs on various cloud computing topics (published on Medium), showcasing a strong understanding of modern cloud technologies.</p>
+                    <ul style="text-align: left;">
+                        <li>AWS- Lambda, S3, API Gateway, Rekognition</li>
+                        <li>Frontend- HTML, CSS, BootStrap</li>
+                        <li>Backend- JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-cards">
+                <div class="certification-card">
+                    <img src="./static/images/udemylogo.png" alt="The Complete SQL Bootcamp">
+                    <h3>The Complete SQL Bootcamp</h3>
+                    <p>Completed Certification from Udemy for an introductory SQL Course</p>
+                    <div class="certification-links">
+                        <a href="https://drive.google.com/file/d/1DqqLCF9DEIKb0ux6KpuA_VjzB-Iixa_9/view?usp=drive_link" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/udemylogo.png" alt="Machine Learning A-Z">
+                    <h3>Machine Learning A-Z</h3>
+                    <p>Completed Certification from Udemy for an introductory Machine Learning Course</p>
+                    <div class="certification-links">
+                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-7ba958d0-73a0-4d79-b85d-791e805d7ae1.pdf" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/hackerRanklogo.png" alt="Java Certificate">
+                    <h3>Java (Basic) Certificate</h3>
+                    <p>Completed Certification from HackerRank for passing the Java skill certification test</p>
+                    <div class="certification-links">
+                        <a href="https://www.hackerrank.com/certificates/d272505b2a0d" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/hackerRanklogo.png" alt="Python Certificate">
+                    <h3>Python (Basic) Certificate</h3>
+                    <p>Completed Certification from HackerRank for passing the Python skill certification test</p>
+                    <div class="certification-links">
+                        <a href="https://www.hackerrank.com/certificates/8c0ff43befa2" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/linkedInlogo.webp" alt="JavaScript Essential Training">
+                    <h3>JavaScript Essential Training</h3>
+                    <p>Completed Certification from LinkedIn Learning for an introductory JavaScript Course</p>
+                    <div class="certification-links">
+                        <a href="https://www.linkedin.com/learning/certificates/01bc726196f20049fa44936af6635484e2c7d69199509a9bb8d1e23925b3964e" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/linkedInlogo.webp" alt="Introduction to Web APIs">
+                    <h3>Introduction to Web APIs</h3>
+                    <p>Completed Certification from LinkedIn Learning for an introductory Web APIs Course</p>
+                    <div class="certification-links">
+                        <a href="https://www.linkedin.com/learning/certificates/74d67b8f99ed541358d761a59298006fee2ed24b43dcdcf93b04fe61b1949125" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <img src="./static/images/linkedInlogo.webp" alt="Learning REST APIs">
+                    <h3>Learning REST APIs</h3>
+                    <p>Completed Certification from LinkedIn Learning for an introductory REST APIs Course</p>
+                    <div class="certification-links">
+                        <a href="https://www.linkedin.com/learning/certificates/ffe8d6a555726ba4c8f968879e726a141aebd72513ab6b40a42ce01577d530c5" target="_blank">View Certification</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogs" class="blogs">
+            <h2>Blogs</h2>
+            <div class="blog-cards">
+                <div class="blog-card">
+                    <h3>Understanding Github</h3>
+                    <p>Deep dive into the concept of closures in JavaScript and their practical applications.</p>
+                    <a href="https://medium.com/@anav-chug18/understanding-github-34494321b832" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Understanding Basics of git</h3>
+                    <p>Tips and tricks to improve the performance of React applications.</p>
+                    <a href="https://medium.com/@anav-chug18/understanding-basics-of-git-70cce1b4e80d" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Introduction to Cloud Computing</h3>
+                    <p>A guide to creating RESTful APIs using Node.js and Express.</p>
+                    <a href="https://medium.com/@anav-chug18/introduction-to-cloud-computing-dc16450ccef6" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Virtualization And Hypervisors</h3>
+                    <p>A guide to creating RESTful APIs using Node.js and Express.</p>
+                    <a href="https://anav-chug18.medium.com/virtualization-and-hypervisors-3aaf453f7f31" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Five Popular Cloud Services</h3>
+                    <p>A guide to creating RESTful APIs using Node.js and Express.</p>
+                    <a href="https://anav-chug18.medium.com/five-popular-cloud-services-dc2156b76a85" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Scalability- Types, Advantages & Disadvantages</h3>
+                    <p>A guide to creating RESTful APIs using Node.js and Express.</p>
+                    <a href="https://anav-chug18.medium.com/scalability-types-advantages-disadvantages-6f2c40191c04" target="_blank">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Encryption-Working, Use-cases, and Challenges</h3>
+                    <p>A guide to creating RESTful APIs using Node.js and Express.</p>
+                    <a href="https://anav-chug18.medium.com/encryption-working-use-cases-and-challenges-aa298f456831" target="_blank">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume">
+            <h2>Resume</h2>
+            <p>Download my resume to learn more about my skills, experience, and education.</p>
+            <a href="static/files/resume.pdf" download="Anav Chug-Resume.pdf">Download Resume</a>
+        </section>
+        
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaboration or any opportunities:</p>
+            <div class="contact-icons">
+                <a href="mailto:anav.chug18@gmail.com" target="_blank" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/anavchug" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/anav-chug18" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://medium.com/@anav-chug18" target="_blank" title="Medium">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anav Chug. Built with passion and creativity. <a href="#">Back to Top</a></p>
+    </footer>
+</body>
+
+</html>
