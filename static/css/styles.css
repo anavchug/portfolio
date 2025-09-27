@@ -62,22 +62,22 @@ nav a:hover {
 }
 
 .skills-icons {
-display: flex;
-flex-wrap: wrap;
-gap: 20px; 
-/* justify-content: center; */
-margin-top: 20px;
-font-size: 3rem;
-color: #f4f4f9;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px; 
+   /* justify-content: center; */
+   margin-top: 20px;
+   font-size: 3rem;
+   color: #f4f4f9;
 }
 
 .skills-icons i {
-transition: transform 0.3s, color 0.3s;
+   transition: transform 0.3s, color 0.3s;
 }
 
 .skills-icons i:hover {
-transform: scale(1.2);
-color: #0078d4;
+   transform: scale(1.2);
+   color: #0078d4;
 }
 
 .projects {
@@ -103,9 +103,11 @@ color: #0078d4;
    transform: translateY(-5px);
    border-color: #007BFF; 
 }
-.project-links{
+
+.project-links {
     text-align: center;
 }
+
 .project-links a {
     display: inline-block;
     margin: 5px;
@@ -115,46 +117,46 @@ color: #0078d4;
     border-radius: 5px;
     text-decoration: none;
     font-size: 0.9em;
- }
+}
  
- .project-links a:hover {
+.project-links a:hover {
     background-color: #0056a8;
- }
+}
 
 .experience-cards, .certification-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
- }
+}
  
- .experience-card, .certification-card {
+.experience-card, .certification-card {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
- }
+}
  
- .experience-card:hover, .certification-card:hover {
+.experience-card:hover, .certification-card:hover {
     transform: translateY(-10px); /* Slightly lift the card */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
     border-color: #007BFF; 
- }
+}
  
- .experience-card img, .certification-card img {
+.experience-card img, .certification-card img {
     width: 60px;
     height: 60px;
     margin-bottom: 10px;
- }
+}
  
- .experience-card h3, .certification-card h3 {
+.experience-card h3, .certification-card h3 {
     margin: 10px 0 5px;
- }
+}
  
- .experience-card p, .certification-card p {
+.experience-card p, .certification-card p {
     margin: 0;
- }
+}
  
 footer {
    text-align: center;
@@ -212,6 +214,7 @@ footer a:hover {
 .certification-links a:hover {
    background-color: #0056a8;
 }
+
 .education {
    margin-top: 40px;
 }
@@ -257,69 +260,98 @@ footer a:hover {
 .education-details ul li {
    margin: 5px 0;
 }
+
 .blog-cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
 }
 
 .blog-card {
-border: 1px solid #ccc;
-border-radius: 10px;
-padding: 20px;
-text-align: center;
-background-color: #112240;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   padding: 20px;
+   text-align: center;
+   background-color: #112240;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s;
 }
 
 .blog-card:hover {
-transform: translateY(-5px);
-border-color: #007BFF; 
+   transform: translateY(-5px);
+   border-color: #007BFF; 
 }
 
 .blog-card h3 {
-margin: 0 0 10px;
-color: #f4f4f9;
+   margin: 0 0 10px;
+   color: #f4f4f9;
 }
 
 .blog-card p {
-margin: 0 0 15px;
-color: #ccc;
+   margin: 0 0 15px;
+   color: #ccc;
 }
 
 .blog-card a {
-color: white;
-background-color: #0078d4;
-padding: 10px 15px;
-border-radius: 5px;
-text-decoration: none;
-font-size: 0.9em;
+   color: white;
+   background-color: #0078d4;
+   padding: 10px 15px;
+   border-radius: 5px;
+   text-decoration: none;
+   font-size: 0.9em;
 }
 
 .blog-card a:hover {
-background-color: #0056a8;
+   background-color: #0056a8;
 }
+
 .contact-icons {
-display: flex;
-/* justify-content: center; */
-gap: 20px;
-margin-top: 20px;
+   display: flex;
+   /* justify-content: center; */
+   gap: 20px;
+   margin-top: 20px;
 }
 
 .contact-icons a {
-text-decoration: none;
-display: inline-block;
-font-size: 3rem;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 3rem;
 }
 
 .contact-icons img.icon {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-transition: transform 0.3s;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   transition: transform 0.3s;
 }
 
 .contact-icons img.icon:hover {
-transform: scale(1.2);
+   transform: scale(1.2);
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+   .container {
+      padding: 20px 10px;
+   }
+
+   nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+   }
+
+   .about {
+      flex-direction: column;
+      text-align: center;
+   }
+   
+   .education-card {
+      flex-direction: column;
+      text-align: center;
+   }
+
+   .skills-icons {
+      justify-content: center;
+   }
 }
